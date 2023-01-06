@@ -1,20 +1,19 @@
 ﻿namespace SnakeLadder
 {
-    internal class Program
+    internal class SnakeLadder
     {
-        public static void Start()
+      static void Main(string[] args)
         {
-            int position = 0;
-            int player;
-            player = position;
-            Console.WriteLine($"player one position {player}");
-            
+            int position = 0, rollDice;
+            Random random = new Random();
+            rollDice = random.Next(1, 7);
+            Console.WriteLine("Rolled Dice number is:" + rollDice);
+
+
         }
-         
-        static void Main(string[] args)
-        {
-            Start();
+                
+           
             
-        }
+        
     }
 }
