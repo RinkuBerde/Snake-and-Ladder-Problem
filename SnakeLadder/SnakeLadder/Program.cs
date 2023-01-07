@@ -2,45 +2,57 @@
 {
     internal class SnakeLadder
     {
-      static void Main(string[] args)
-        { 
-            //variable
-            int position = 0, rollDice;
-            //create random number of rolling dice
-            Random random = new Random();
+        static void Main(string[] args)
+        {
 
-            //list to check option 
+            //local variable
+            int rollDice, position = 0;
+            int count = 0;
+
+            //To generate random number
+            Random random = new Random();
+            //List to check options
             var list = new List<string> { "No Play", "Ladder", "Snake" };
 
-            //user condition
+            //Conditions for user options
             rollDice = random.Next(1, 7);
-            Console.WriteLine("Rolled Dice number is:" + rollDice);
-            //print user option 
-            Console.WriteLine("player option 1.No Play 2.Ladder 3.Snake");
+            Console.WriteLine("Dice number is : " + rollDice);
 
-            //random to check user option
-            int index = random.Next(list.Count);
-            Console.WriteLine("Player option is: " + list[index]);
+            //Print user options
+            Console.WriteLine("Player checks options 1.No Play  2.Ladder   3.Snake");
 
-            if (position + rollDice< 100)
+            //Use random to check user option
+            int pos = random.Next(list.Count);
+            Console.WriteLine("Player option is : " + list[pos]);
+            if (position + rollDice < 100)
             {
-                if (list[index] == "Ladder") position += rollDice;
-                if (list[index] == "Snake") position -= rollDice;
+                if (list[pos] == "Ladder")
+                {
+                    position += rollDice;
+                }
+                if (list[pos] == "Snake")
+                {
+                    position -= rollDice;
+                }
+            }
+            else if (position + rollDice == 100 && list[pos] == "Ladder")
+            {
+                position += rollDice;
+
             }
 
             if (position < 0)
             {
                 position = 0;
             }
-            //print to console
+            //Print to Console
             Console.WriteLine("\n");
-            
+            Console.WriteLine("Player current position : " + position);
+            count++;
+            Console.WriteLine("Final position is :" + position);
+            Console.WriteLine("Total MOves:" + count);
+        } 
 
-            //print result of playerPosition and dice rolled
-            Console.WriteLine("Player current position:" + position);
-            Console.WriteLine("Player final postion:" + position );
-
-        }      
+    }      
         
     }
-}
