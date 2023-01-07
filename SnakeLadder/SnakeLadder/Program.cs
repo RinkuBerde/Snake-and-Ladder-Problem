@@ -4,7 +4,6 @@
     {
         static void Main(string[] args)
         {
-
             //local variable
             int rollDice, position = 0;
             int count = 0;
@@ -35,12 +34,11 @@
                     position -= rollDice;
                 }
             }
-            else if (position + rollDice == 100 && list[pos] == "Ladder")
+            else if (position+ rollDice == 100)
             {
                 position += rollDice;
 
             }
-
             if (position < 0)
             {
                 position = 0;
@@ -50,9 +48,8 @@
             Console.WriteLine("Player current position : " + position);
             count++;
             Console.WriteLine("Final position is :" + position);
-            Console.WriteLine("Total MOves:" + count);
-        } 
-
+            Console.WriteLine("number of times:" + count);
+        }
     }      
         
     }
